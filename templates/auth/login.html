@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .login-header {
+        padding-bottom: 15px;
+    }
+    .register-text {
+        padding-top: 15px;
+    }
+</style>
+<div class="container jumbotron">
+    <h1 class="login-header"> Log into your account </h1>
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        <p><input type="text" name="username" placeholder="Username..."></p>
+        <p><input type="password" name="password" placeholder="Password..." ></p>
+        <input class="btn btn-success" type="submit" value="Login">
+        <p class="register-text">Don't have an account? <a href='{% url 'register' %}'>Register</a></p>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+    <style>
+        .tasks { text-align: center; margin: auto; }
+        .finished {background-color: #74c474;}
+        .unfinished {background-color: rgba(189, 48, 48, 0.89);}
+        .single-task {
+            width: 50%;
+            text-align: center;
+            padding: 10px;
+            margin: auto auto 10px;
+        }
+        .todo-header {
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+
+    <div class="todo-header">
+        <h1> {{ user }}'s Todo: </h1>
+    </div>
+
+    <div class="tasks">
+        {% for task in objects %}
+            {% if task.finished %}
+                <div class="single-task finished">
+            {% else %}
+                <div class="single-task unfinished">
+            {% endif %}
+                    <h2><a href="{{ task.get_absolute_url }}">Task: {{ task.title }}</a></h2>
+                    <p> {{ task.description }}</p>
+                </div>
+        {% endfor %}
+    </div>
+{% endblock %}

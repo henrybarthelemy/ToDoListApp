@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <style>
+        .create-form {
+            width: 50%;
+            margin: auto;
+        }
+        .form-header {
+            text-align: center;
+            padding-top: 20px;
+        }
+    </style>
+    <div class="form-header">
+        <h1>Create a new task to do</h1>
+    </div>
+
+    <div class="create-form">
+        <form method="POST"> {% csrf_token %}
+            {{ form | crispy }}
+            <input type="submit" value="Create"/>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <style>
+        .tasks { text-align: center; margin: auto; }
+        .finished {background-color: #74c474;}
+        .unfinished {background-color: rgba(189, 48, 48, 0.89);}
+        .single-task {
+            width: 50%;
+            text-align: center;
+            padding: 10px;
+            margin: auto auto 10px;
+        }
+        .todo-header { width: 100%; margin: auto; }
+    </style>
+
+    {% if object.finished %}
+        <div class="single-task finished">
+    {% else %}
+        <div class="single-task unfinished">
+    {% endif %}
+            <h2>Task: {{ object.title }}</h2>
+            <p> {{ object.description }}</p>
+
+        <form method="POST">{% csrf_token %}
+            <p> <input type="submit" name="finish" value="Mark as finished"/>
+                <input type="submit" name="unfinish" value="Mark as unfinished"/>
+                <input type="submit" name="delete" value="Delete"/>
+            </p>
+        </form>
+
+
+        </div>
+
+
+{% endblock %}

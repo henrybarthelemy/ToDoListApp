@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <style>
+        .create-form {
+            width: 50%;
+            margin: auto;
+            padding: 20px
+        }
+        .form-header {
+            text-align: center;
+        }
+    </style>
+    <div class="container jumbotron">
+
+        <div class="form-header">
+            <h1>Register a new account</h1>
+        </div>
+        <div class="create-form">
+            <form method="POST"> {% csrf_token %}
+                {{ form | crispy }}
+                <input type="submit" value="Register Account"/>
+            </form>
+        </div>
+    </div>
+{% endblock %}
