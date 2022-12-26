@@ -19,6 +19,9 @@ from task.views import (
     task_detail_view,
     update_task_view,
     task_create_view,
+)
+
+from auth.views import (
     login_view,
     register_view,
     signout_view
