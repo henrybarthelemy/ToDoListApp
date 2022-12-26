@@ -1,10 +1,10 @@
 # ToDoListApp
-Created with Django utilizing bootstrap. Web app created after learning django where users can log in and work with their own to-do list
+Created with Django utilizing bootstrap. Web app where users can log in and work with their own to-do list
 
 
 ## Users
 
-Includes ability login and register users, as well as bootstrap for front end nav bar and forms
+Includes ability for users to login and register, as well as bootstrap for front end nav bar and forms
 
 <img width="768" alt="image" src="https://user-images.githubusercontent.com/59814640/209494326-c2008bd3-e004-4688-b262-168f8db6aec5.png">
 
